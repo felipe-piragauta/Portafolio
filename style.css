@@ -1,0 +1,484 @@
+/* ================= VARIABLES PRO ================= */
+:root{
+    --bg:#f8fafc;
+    --text:#0f172a;
+    --card:#ffffff;
+    --primary:#2563eb;
+    --secondary:#38bdf8;
+    --accent:#22c55e;
+    --muted:#64748b;
+
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+    --radius:18px;
+}
+
+/* DARK MODE */
+@media(prefers-color-scheme: dark){
+    :root{
+        --bg:#020617;
+        --text:#e2e8f0;
+        --card:#0f172a;
+        --muted:#94a3b8;
+    }
+}
+
+/* ================= BODY ================= */
+body{
+    margin:0;
+    font-family:'Inter','Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ================= HEADER ================= */
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    top:-50px;
+    right:-50px;
+}
+
+header h1{
+    margin:0;
+    font-size:3em;
+}
+
+header p{
+    opacity:0.9;
+}
+
+/* FOTO */
+.foto{
+    width:140px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-bottom:15px;
+    transition:.4s;
+}
+
+.foto:hover{
+    transform:scale(1.05);
+}
+
+/* ================= CONTENEDOR ================= */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+/* ================= TITULOS ================= */
+h2{
+    text-align:center;
+    font-size:30px;
+    margin:60px 0 30px;
+    color:var(--primary);
+    position:relative;
+}
+
+h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:linear-gradient(90deg,var(--secondary),var(--primary));
+    display:block;
+    margin:12px auto;
+    border-radius:10px;
+}
+
+/* ================= TARJETAS ================= */
+.card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:25px;
+    margin:25px 0;
+    box-shadow:var(--shadow);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:.4s;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* ================= TEXTO ================= */
+p{
+    line-height:1.7;
+    font-size:16px;
+    text-align:center;
+}
+
+/* ================= SKILLS ================= */
+.skills-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+/* TARJETAS SKILL */
+.skill-card{
+    width:160px;
+    padding:20px;
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#f0f9ff,#e0f2fe);
+    border:1px solid rgba(37,99,235,0.1);
+
+    text-align:center;
+    box-shadow:0 10px 25px rgba(37,99,235,0.08);
+
+    transition:.4s;
+}
+
+/* HOVER */
+.skill-card:hover{
+    transform:translateY(-10px) scale(1.05);
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    box-shadow:0 20px 50px rgba(37,99,235,0.3);
+}
+
+.skill-card:hover p{
+    color:white;
+}
+
+/* ICONOS */
+.skill-card img{
+    width:50px;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.skill-card:hover img{
+    transform:scale(1.2);
+    filter:brightness(0) invert(1);
+}
+
+/* ================= OBJETIVO ================= */
+.objetivo{
+    margin-top:30px;
+    padding:25px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(37,99,235,0.3);
+}
+
+/* ================= PROYECTOS ================= */
+.proyectos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* TARJETA PROYECTO */
+.proyecto{
+    background:linear-gradient(135deg,#ffffff,#f1f5f9);
+    border-radius:var(--radius);
+    padding:20px;
+
+    border:1px solid rgba(0,0,0,0.05);
+
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* EFECTO BRILLO */
+.proyecto::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:linear-gradient(120deg,transparent,#38bdf8,transparent);
+    top:-100%;
+    left:-100%;
+    transition:.6s;
+}
+
+.proyecto:hover::before{
+    top:100%;
+    left:100%;
+}
+
+/* HOVER */
+.proyecto:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 50px rgba(37,99,235,0.2);
+}
+
+/* TITULO */
+.proyecto h3{
+    color:var(--primary);
+}
+
+/* TEXTO */
+.proyecto p{
+    color:var(--muted);
+}
+
+/* ================= BOTONES ================= */
+button{
+    display:block;
+    margin:20px auto;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    background:var(--secondary);
+}
+
+/* BOTON VER */
+#visitButton{
+    background:var(--accent);
+}
+
+#visitButton:hover{
+    background:#16a34a;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#0f172a;
+    color:white;
+}
+
+footer a{
+    color:#38bdf8;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+footer a:hover{
+    color:white;
+}
+
+/* ================= BOTONES FLOTANTES ================= */
+.whatsapp, .linkedin{
+    position:fixed;
+    right:20px;
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:24px;
+
+    box-shadow:var(--shadow);
+    z-index:1000;
+
+    transition:.3s;
+}
+
+.whatsapp{
+    bottom:20px;
+    background:#25D366;
+}
+
+.linkedin{
+    bottom:90px;
+    background:#0077b5;
+}
+
+.whatsapp:hover,
+.linkedin:hover{
+    transform:scale(1.15);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    header h1{
+        font-size:2.2em;
+    }
+
+    h2{
+        font-size:24px;
+    }
+}
+
+/* ================= DARK MODE SKILLS ================= */
+@media(prefers-color-scheme: dark){
+
+    .skill-card{
+        background:linear-gradient(135deg,#0f172a,#1e293b);
+        border:1px solid rgba(255,255,255,0.05);
+        box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .skill-card p{
+        color:#cbd5f5;
+    }
+
+    .proyecto{
+        background:linear-gradient(135deg,#0f172a,#1e293b);
+    }
+
+}
+
+
+/* BOTON GITHUB */
+.github{
+    position:fixed;
+    bottom:160px; /* arriba del linkedin */
+    right:20px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#171515; /* color github */
+    color:white;
+
+    font-size:24px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    z-index:1000;
+
+    transition:.3s;
+}
+
+/* HOVER */
+.github:hover{
+    transform:scale(1.15);
+    background:#333;
+}
+/* ================= BOTONES FLOTANTES ================= */
+
+.whatsapp, .linkedin, .github, .github2{
+    position:fixed;
+    right:20px;
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:24px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    z-index:1000;
+
+    transition:.3s;
+}
+
+/* POSICIONES */
+.whatsapp{ bottom:20px; background:#25D366; }
+.linkedin{ bottom:90px; background:#0077b5; }
+.github{ bottom:160px; background:#171515; }   /* principal */
+.github2{ bottom:230px; background:#333; }     /* secundario */
+
+/* HOVER EFECTO PRO */
+.whatsapp:hover,
+.linkedin:hover,
+.github:hover,
+.github2:hover{
+    transform:scale(1.15) translateY(-5px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* EFECTO BRILLO */
+.github::after,
+.github2::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    opacity:0;
+    transition:.3s;
+}
+
+.github:hover::after,
+.github2:hover::after{
+    opacity:1;
+}
+
+
+
+
+
+/* CONTENEDOR BOTONES */
+.btn-proyectos{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+/* BOTONES BASE */
+.btn-proyectos a{
+    flex:1;
+    text-align:center;
+    padding:10px;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+/* BOTON DEMO */
+.btn-demo{
+    background:linear-gradient(90deg,#22c55e,#4ade80);
+    color:white;
+}
+
+.btn-demo:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 20px rgba(34,197,94,0.4);
+}
+
+/* BOTON CODIGO */
+.btn-code{
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+    color:white;
+}
+
+.btn-code:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 20px rgba(37,99,235,0.4);
+}
