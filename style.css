@@ -482,3 +482,50 @@ footer a:hover{
     transform:scale(1.08);
     box-shadow:0 10px 20px rgba(37,99,235,0.4);
 }
+
+
+
+
+
+/* ================= PARTICIPACION ESTILO MODERNO ================= */
+.participacion-item{
+    position: relative;
+    padding: 18px 20px 18px 30px;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--primary);
+    background: rgba(37,99,235,0.04);
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.participacion-item:hover{
+    transform: translateX(6px);
+    background: rgba(37,99,235,0.08);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.08);
+}
+
+.participacion-item::before{
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 24px;
+    width: 14px;
+    height: 14px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid var(--card);
+}
+
+.participacion-item h3{
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.participacion-item p{
+    margin: 4px 0;
+    text-align: left;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 15px;
+}
