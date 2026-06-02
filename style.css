@@ -208,22 +208,7 @@ p{
     overflow:hidden;
 }
 
-/* EFECTO BRILLO */
-.proyecto::before{
-    content:"";
-    position:absolute;
-    width:200%;
-    height:200%;
-    background:linear-gradient(120deg,transparent,#38bdf8,transparent);
-    top:-100%;
-    left:-100%;
-    transition:.6s;
-}
 
-.proyecto:hover::before{
-    top:100%;
-    left:100%;
-}
 
 /* HOVER */
 .proyecto:hover{
